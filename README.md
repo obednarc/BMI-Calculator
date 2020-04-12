@@ -9,7 +9,7 @@ Po wejściu na stronę w kolejności wystąpią interakcje z użytkownikiem w po
   (wskaźnik glukozy/insuliny, na podstawie którego diagnozuje się insulinooporność)
 
 2) zalecenia przy diagnozie – krótkie założenia ruchu i diety + kalkulatory CPM (całkowita przemiana materii) 
-  i PPM ( podstawowa przemiana materii) pozwalające dokładnie wyliczyć swoje zapotrzebowanie kaloryczne.
+  i PPM ( podstawowa przemiana materii) pozwalające dokładnie wyliczyć swoje zapotrzebowanie kaloryczne, kluczowe przy diagnozie.
 
 3) krótkie omówienie jadłospisu w insulinooporności (przede wszystkim produkty z niskim indeksem glikemicznym, czyli poniżej 55). 
   Procentowy rozkład dzienny węgli, białka, tłuszczu w diecie.
