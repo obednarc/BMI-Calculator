@@ -16,7 +16,7 @@ Po wejściu na stronę w kolejności wystąpią interakcje z użytkownikiem w po
   Wykaz produktów z niskim indeksem glikemicznym, możliwość wyszukiwania po nazwie, indeksie. 
   Możliwość dodawania nowych produktów do bazy jako „dodane przez użytkowników”.
 
-    Produkty wyświetlane będą w formie tabeli według danych poniżej:
+    Produkty wyświetlane będą w formie posortowanej tabeli według danych poniżej:
 
       - Produkt: Makaron pełnoziarnisty
       - Kategoria: Węglowodany
