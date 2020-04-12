@@ -13,7 +13,7 @@ Po wejściu na stronę w kolejności wystąpią interakcje z użytkownikiem w po
 
 3) krótkie omówienie jadłospisu w insulinooporności (przede wszystkim produkty z niskim indeksem glikemicznym, czyli poniżej 55). 
   Procentowy rozkład dzienny węgli, białka, tłuszczu w diecie.
-  Wykaz produktów z niskim indeksem glikemicznym, możliwość wyszukiwania po nazwie, indeksie. 
+  Wykaz produktów z niskim indeksem glikemicznym, możliwość wyszukiwania i sortowania po nazwie, kategorii, indeksie. 
   Możliwość dodawania nowych produktów do bazy jako „dodane przez użytkowników”.
 
     Produkty wyświetlane będą w formie posortowanej po indeksie tabeli według danych poniżej:
