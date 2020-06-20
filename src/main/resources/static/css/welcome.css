@@ -1,0 +1,20 @@
+body{
+    background-color: #f8f8f8;
+}
+
+.uk-card-default{
+    width: 400px;
+    margin: 300px auto
+}
+
+.uk-button{
+    margin-top: 50px;
+    color: white;
+    background-color: orange;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.uk-button-secondary{
+    background-color: #993399;
+}

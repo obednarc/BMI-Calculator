@@ -1,13 +1,14 @@
 package panel.health.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+
+@Controller
 public class StartController {
 
-    @GetMapping("start")
-    public String start() {
-        return "Witaj!";
+    @GetMapping
+    public String welcome() {
+        return "welcome";
     }
 }
