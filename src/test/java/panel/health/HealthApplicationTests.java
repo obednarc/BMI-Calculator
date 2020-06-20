@@ -1,10 +1,10 @@
-package asystent.insulinoopornosc;
+package panel.health;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class InsulinoopornoscApplicationTests {
+class HealthApplicationTests {
 
     @Test
     void contextLoads() {
