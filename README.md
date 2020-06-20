@@ -1,3 +1,6 @@
+EDIT: nieaktualne, projekt będzie dotyczył zdrowia i wskaźników, ale w bardziej okrojonej wersji
+
+
 Projekt będzie Asystentem początkujących osób zmagających się z insulinoopornością.
 Pomysł projektu jest wynikiem osobistych poszukiwań strony tego typu, na której znalazłyby się wszystkie odpowiedzi 
 na pytania nurtujące w pierwszej kolejności po zdiagnozowaniu.
