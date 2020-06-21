@@ -1,5 +1,6 @@
 package panel.health.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -8,10 +9,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Users")
 public class User {
-@Id
+
+    @Id
     private String username;
     private String password;
-    private int age;
     private String firstname;
     private String lastname;
     private String email;
@@ -78,17 +79,7 @@ public class User {
 
     }
 
-    public int getAge() {
 
-        return age;
-
-    }
-
-    public void setAge(int age) {
-
-        this.age = age;
-
-    }
 
     public int getPhone() {
 
