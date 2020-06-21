@@ -11,7 +11,7 @@ public class User {
 @Id
     private String username;
     private String password;
-    private String sex;
+    private int age;
     private String firstname;
     private String lastname;
     private String email;
@@ -78,15 +78,15 @@ public class User {
 
     }
 
-    public String getSex() {
+    public int getAge() {
 
-        return sex;
+        return age;
 
     }
 
-    public void setSex(String sex) {
+    public void setAge(int age) {
 
-        this.sex = sex;
+        this.age = age;
 
     }
 
