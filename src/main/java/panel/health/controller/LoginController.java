@@ -31,7 +31,7 @@ public class LoginController {
         }
         User user = userService.loginUser(userDto);
         if (user != null && user.getUsername().equalsIgnoreCase(userDto.getUsername()) && user.getPassword().equals(userDto.getPassword())) {
-            return new ModelAndView("welcome"); // todo uzytkownik podał poprawne dane, zmienić przekierowanie na stronę z bmi;
+            return new ModelAndView("calculator");
         }
         ModelAndView modelAndView = new ModelAndView("login");
         modelAndView.addObject("wrongCredentials", "*Nazwa użytkownika lub hasło jest niepoprawne.");
