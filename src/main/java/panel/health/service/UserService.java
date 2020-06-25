@@ -10,6 +10,6 @@ public interface UserService {
 
     void addUser(User user);
 
-    User validateUser(UserDto userDto);
+    User loginUser(UserDto userDto);
 }
 

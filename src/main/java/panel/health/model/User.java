@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
@@ -27,6 +28,7 @@ public class User {
     private String lastName;
     private String email;
 
-    @Pattern(regexp="(^$|[0-9]{9})", message = "*Numer telefonu musi składać się z maxymalnie 9 cyfr.")
+    @NotBlank(message = "*Numer telefonu nie może być pusty")
+    @Pattern(regexp="(^$|[0-9]{9})", message = "*Numer telefonu musi składać się z 9 cyfr.")
     private String phone;
 }

@@ -1,48 +1,40 @@
 package panel.health.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import panel.health.dto.UserDto;
 import panel.health.model.User;
 import panel.health.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 @Controller
+@RequiredArgsConstructor
 public class LoginController {
 
-    @Autowired
-    public UserService userService;
+    private final UserService userService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
+    @GetMapping("/login")
+    public ModelAndView showLogin() {
         ModelAndView modelAndView = new ModelAndView("login");
-        modelAndView.addObject("login", new UserDto());
+        modelAndView.addObject("userDto", new UserDto());
         return modelAndView;
     }
 
-
     @PostMapping(value = "/loginProcess")
-    public String login(@ModelAttribute("login") UserDto userDto, BindingResult bindingResult, ModelMap model) {
-
-        User user = userService.validateUser(userDto);
-
-        boolean isValidUser = false;
-
-        if (null != user && user.getUsername().equals(userDto.getUsername())
-                && user.getPassword().equals(userDto.getPassword())) {
-            isValidUser = true;
-            model.addAttribute("username", user.getUsername());
+    public ModelAndView login(@Valid UserDto userDto, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ModelAndView("login");
         }
-
-        return isValidUser ? "welcome" : "login";
+        User user = userService.loginUser(userDto);
+        if (user != null && user.getUsername().equalsIgnoreCase(userDto.getUsername()) && user.getPassword().equals(userDto.getPassword())) {
+            return new ModelAndView("welcome"); // todo uzytkownik podał poprawne dane, zmienić przekierowanie na stronę z bmi;
+        }
+        ModelAndView modelAndView = new ModelAndView("login");
+        modelAndView.addObject("wrongCredentials", "*Nazwa użytkownika lub hasło jest niepoprawne.");
+        return modelAndView;
     }
 }

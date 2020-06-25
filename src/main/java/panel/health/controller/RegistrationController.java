@@ -2,10 +2,10 @@ package panel.health.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import panel.health.dto.UserDto;
 import panel.health.model.User;
 import panel.health.service.UserService;
 
@@ -25,12 +25,14 @@ public class RegistrationController {
     }
 
     @PostMapping("/register")
-    public String addUser(@Valid User user, BindingResult bindingResult, Model model) {
+    public ModelAndView addUser(@Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "register";
+            return new ModelAndView("register");
         }
         userService.addUser(user);
-        return "welcome";
+        ModelAndView modelAndView = new ModelAndView("login");
+        modelAndView.addObject("userDto", new UserDto());
+        return modelAndView;
     }
 }
 
