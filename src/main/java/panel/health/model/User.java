@@ -1,96 +1,32 @@
 package panel.health.model;
 
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "Users")
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotEmpty(message = "*Nazwa użytkownika nie może być pusta.")
     private String username;
+
+    @NotEmpty(message = "*Hasło nie może być puste.")
     private String password;
-    private String firstname;
-    private String lastname;
+
+    private String firstName;
+    private String lastName;
     private String email;
-    private int phone;
 
-
-    public String getUsername() {
-
-        return username;
-
-    }
-
-    public void setUsername(String username) {
-
-        this.username = username;
-
-    }
-
-    public String getPassword() {
-
-        return password;
-
-    }
-
-    public void setPassword(String password) {
-
-        this.password = password;
-
-    }
-
-    public String getFirstname() {
-
-        return firstname;
-
-    }
-
-    public void setFirstname(String firstname) {
-
-        this.firstname = firstname;
-
-    }
-
-    public String getLastname() {
-
-        return lastname;
-
-    }
-
-    public void setLastname(String lastname) {
-
-        this.lastname = lastname;
-
-    }
-
-    public String getEmail() {
-
-        return email;
-
-    }
-
-    public void setEmail(String email) {
-
-        this.email = email;
-
-    }
-
-
-
-    public int getPhone() {
-
-        return phone;
-
-    }
-
-    public void setPhone(int phone) {
-
-        this.phone = phone;
-
-    }
-
+    @Pattern(regexp="(^$|[0-9]{9})", message = "*Numer telefonu musi składać się z maxymalnie 9 cyfr.")
+    private String phone;
 }

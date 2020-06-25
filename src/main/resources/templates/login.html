@@ -8,7 +8,7 @@
 <body>
 
 <div class="container">
-    <form style="width: 400px; margin: auto" th:object="${login}" th:action="@{/loginProcess}" method="post">
+    <form style="width: 400px; margin: auto" th:object="${userDto}" th:action="@{/loginProcess}" method="post">
         <div class="uk-margin">
             <label>Login</label>
             <input th:field="*{username}" type="text" class="uk-input">
@@ -17,9 +17,6 @@
             <label>Hasło</label>
             <input th:field="*{password}" type="password" class="uk-input">
         </div>
-
-
-
         <a th:href="@{/}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
         <input type="submit" class="uk-button uk-button-primary" value="Zaloguj się">
     </form>

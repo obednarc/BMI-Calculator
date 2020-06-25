@@ -1,36 +1,35 @@
 package panel.health.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import panel.health.model.User;
 import panel.health.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 @Controller
+@RequiredArgsConstructor
 public class RegistrationController {
 
-    @Autowired
-    public UserService userService;
+    private final UserService userService;
 
-
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public ModelAndView showRegister(HttpServletRequest request, HttpServletResponse response) {
+    @GetMapping("/register")
+    public ModelAndView showRegister() {
         ModelAndView modelAndView = new ModelAndView("register");
         modelAndView.addObject("user", new User());
         return modelAndView;
-
     }
 
-    @PostMapping(value = "/registrationProcess")
-    public String addUser(@ModelAttribute("user") User user, ModelMap model) {
+    @PostMapping("/register")
+    public String addUser(@Valid User user, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "register";
+        }
         userService.addUser(user);
-        model.addAttribute("username", user.getUsername());
-
         return "welcome";
     }
 }

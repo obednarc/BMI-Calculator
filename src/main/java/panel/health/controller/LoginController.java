@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import panel.health.model.Login;
+import panel.health.dto.UserDto;
 import panel.health.model.User;
 import panel.health.service.UserService;
 
@@ -25,20 +25,20 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView modelAndView = new ModelAndView("login");
-        modelAndView.addObject("login", new Login());
+        modelAndView.addObject("login", new UserDto());
         return modelAndView;
     }
 
 
     @PostMapping(value = "/loginProcess")
-    public String login(@ModelAttribute("login") Login login, BindingResult bindingResult, ModelMap model) {
+    public String login(@ModelAttribute("login") UserDto userDto, BindingResult bindingResult, ModelMap model) {
 
-        User user = userService.validateUser(login);
+        User user = userService.validateUser(userDto);
 
         boolean isValidUser = false;
 
-        if (null != user && user.getUsername().equals(login.getUsername())
-                && user.getPassword().equals(login.getPassword())) {
+        if (null != user && user.getUsername().equals(userDto.getUsername())
+                && user.getPassword().equals(userDto.getPassword())) {
             isValidUser = true;
             model.addAttribute("username", user.getUsername());
         }

@@ -1,24 +1,24 @@
 package panel.health.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import panel.health.dao.UserRepository;
-import panel.health.model.Login;
+import panel.health.dto.UserDto;
+import panel.health.exception.UserNotFoundException;
 import panel.health.model.User;
 
-
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    public UserRepository userRepo;
+    private final UserRepository userRepository;
 
     public void addUser(User user) {
-        userRepo.save(user);
+        userRepository.save(user);
     }
 
-    public User validateUser(Login login) {
-        return userRepo.findById(login.getUsername()).get();
+    public User validateUser(UserDto userDto) {
+        return userRepository.findByUsername(userDto.getUsername()).orElseThrow(() -> new UserNotFoundException(userDto.getUsername()));
     }
 
 }
