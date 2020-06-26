@@ -5,8 +5,7 @@
 <body>
 <div class="container">
     <nav class="uk-navbar-container" uk-navbar>
-
-        <div class="uk-navbar-center">
+        <div class="uk-navbar-center" style="margin-top: 20px">
             <p class="uk-navbar-item uk-logo">Kalkulator BMI</p>
         </div>
 
@@ -23,29 +22,31 @@
     <h2 class="calc-header">Wprowadź dane</h2>
     <form style="width: 400px; margin: auto; text-align:center;" action="#" th:action="@{/calculator}" th:object="${operationModel}" method="POST">
 
-        <div class="uk-margin">
-            <label>Wprowadź swoją wagę w kg:</label>
+        <div class="uk-margin" style="margin-top: 60px";>
+            <label>Wprowadź swoją wagę w [kg]:</label>
             <input type="text" th:field="*{weight}"/>
         </div>
 
-        <div class="uk-margin">
-            <label>Wprowadź swój wzrost w m:</label>
+        <div class="uk-margin" style="margin-top: 40px !important;">
+            <label>Wprowadź swój wzrost w [m]:</label>
             <input type="text" th:field="*{height}"/>
         </div>
         <br>
 
-        <input type="submit" style="margin-right: 20px;" class="uk-button uk-button-danger" name="bmiDivide" value="Oblicz"/>
-        <input type="submit" class="uk-button uk-button-primary" name="clearSimple" value="Wyczyść"/>
+        <input type="submit" style="margin-right: 20px;" class="uk-button uk-button-primary" name="bmiDivide" value="Oblicz"/>
+        <input type="submit" class="uk-button uk-button-danger" name="clearSimple" value="Wyczyść"/>
     </form>
     <br>
     <br>
 
     <div class="container">
-        <h2 class="calc-header">Twoje BMI: </h2>
+        <h2 class="calc-result-header">Twoje BMI: </h2>
         <form style="width: 400px; margin: auto" action="#" th:action="@{/calculator}" th:object="${operationModel}"
               method="POST">
             <div class="uk-margin">
+                <div class="result">
                 <p th:text="${#numbers.formatDecimal(bmi_result, 1, 'DEFAULT', 2, 'DEFAULT')}"></p>
+                </div>
             </div>
         </form>
     </div>

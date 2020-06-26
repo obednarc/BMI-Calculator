@@ -4,21 +4,33 @@ html{
 
 .uk-card-default{
     width: 400px;
-    margin: 300px auto
+    margin: 200px auto
 }
 
 .uk-button{
-    margin-top: 50px;
+    margin-top: 20px;
     color: white;
-    background-color: orange;
+    background-color: #ffbf00;
     border-radius: 4px;
     font-size: 16px;
 }
 
 .uk-button-secondary{
-    background-color: #993399;
+    background-color: dodgerblue;
 }
 
 .calc-header{
     text-align:center;
+    margin-top: 80px;
+}
+
+.calc-result-header{
+    text-align:center;
+    margin: 20px 0 auto;
+}
+
+.result{
+    text-align:center;
+    font-size: 60px;
+    font-weight: bold;
 }
