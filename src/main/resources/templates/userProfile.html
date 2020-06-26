@@ -13,7 +13,6 @@
 
     <form style="width: 400px; margin: auto" th:object="${user}" th:action="@{/updateUser}" method="post">
         <input type="hidden" th:field="*{id}"/>
-        <input type="hidden" th:field="*{password}"/>
         <input type="hidden" th:field="*{username}"/>
         <div class="uk-margin">
             <label>Nazwa użytkownika ( brak możliwości edycji )</label>
