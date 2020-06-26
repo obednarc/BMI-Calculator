@@ -8,8 +8,10 @@ import panel.health.model.User;
 @Service
 public interface UserService {
 
-    void addUser(User user);
+    void saveUser(User user);
 
     User loginUser(UserDto userDto);
+
+    User findUserById(Long id);
 }
 

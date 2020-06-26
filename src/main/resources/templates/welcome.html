@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../static/css/uikit.min.css" th:href="@{css/uikit.min.css}">
-    <link rel="stylesheet" href="../static/css/start.css" th:href="@{css/start.css}">
-</head>
+<head th:replace="fragments/head :: head"></head>
 
 <body>
 <div class="uk-card-default uk-card uk-card-body">
@@ -13,10 +8,6 @@
     <h2 class="uk-text-center uk-card-title" th:text="#{welcome}"></h2>
     <a th:href="@{login}" class="uk-button uk-button-primary uk-width-1-1" th:text="#{enter}"></a>
     <a th:href="@{register}" class="uk-button uk-button-secondary uk-width-1-1" th:text="#{enter2}"></a>
-
 </div>
-
-
-
 </body>
 </html>

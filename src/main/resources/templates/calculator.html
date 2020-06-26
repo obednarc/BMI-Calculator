@@ -1,47 +1,50 @@
-<!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::.container})}">
-<<head>
-    <meta charset="UTF-8">
-    <title>BMI_Calculator</title>
-</head>
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+
 <body>
-
 <div class="container">
-<h1>Wprowadź dane</h1>
-    <form style="width: 400px; margin: auto" action="#" th:action="@{/calculator}" th:object="${operationModel}" method="POST">
+    <nav class="uk-navbar-container" uk-navbar>
 
-    <div class="uk-margin">
-        <label>Wprowadź swoją wagę w kg:</label>
-    <input type="text" th:field="*{weight}"/>
-    </div>
+        <div class="uk-navbar-center">
+            <p class="uk-navbar-item uk-logo">Kalkulator BMI</p>
+        </div>
 
-    <div class="uk-margin">
-        <label>Wprowadź swój wzrost w m:</label>
-    <input type="text" th:field="*{height}"/>
-    </div>
-    <br>
+        <form class="uk-navbar-right" style="margin-right: 50px;" th:action="@{/userProfile}" th:object="${user}" method="post">
+            <input type="hidden" th:field="*{id}"/>
+            <input type="submit" class="uk-button uk-button-primary" value="Profil użytkownika">
+        </form>
+    </nav>
 
+    <h2 class="calc-header">Wprowadź dane</h2>
+    <form style="width: 400px; margin: auto; text-align:center;" action="#" th:action="@{/calculator}" th:object="${operationModel}" method="POST">
 
+        <div class="uk-margin">
+            <label>Wprowadź swoją wagę w kg:</label>
+            <input type="text" th:field="*{weight}"/>
+        </div>
 
-        <input type="submit" class="uk-button uk-button-danger" name="bmi_divide" value="Oblicz"/>
+        <div class="uk-margin">
+            <label>Wprowadź swój wzrost w m:</label>
+            <input type="text" th:field="*{height}"/>
+        </div>
+        <br>
+
+        <input type="submit" class="uk-button uk-button-danger" name="bmiDivide" value="Oblicz"/>
         <input type="submit" class="uk-button uk-button-primary" name="clearSimple" value="Wyczyść"/>
-</form>
+    </form>
     <br>
     <br>
 
     <div class="container">
-        <h1>Twoje BMI: </h1>
-        <form style="width: 400px; margin: auto" action="#" th:action="@{/calculator}" th:object="${operationModel}" method="POST">
+        <h2 class="calc-header">Twoje BMI: </h2>
+        <form style="width: 400px; margin: auto" action="#" th:action="@{/calculator}" th:object="${operationModel}"
+              method="POST">
             <div class="uk-margin">
                 <p th:text="${#numbers.formatDecimal(bmi_result, 1, 'DEFAULT', 2, 'DEFAULT')}"></p>
             </div>
-
         </form>
-
-
-
-
-
-
+    </div>
+</div>
 </body>
 </html>

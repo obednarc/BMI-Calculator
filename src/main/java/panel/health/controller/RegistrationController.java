@@ -29,9 +29,10 @@ public class RegistrationController {
         if (bindingResult.hasErrors()) {
             return new ModelAndView("register");
         }
-        userService.addUser(user);
+        userService.saveUser(user);
         ModelAndView modelAndView = new ModelAndView("login");
         modelAndView.addObject("userDto", new UserDto());
+        modelAndView.addObject("correctRegister", "*Konto zarejestrowane. Możesz się zalogować.");
         return modelAndView;
     }
 }

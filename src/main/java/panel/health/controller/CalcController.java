@@ -1,37 +1,40 @@
 package panel.health.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import panel.health.model.Calc;
 import panel.health.service.CalcService;
 
+import static panel.health.controller.LoginController.loggedUser;
+
 @Controller
+@RequiredArgsConstructor
 public class CalcController {
 
     Calc.OperationModel operationModel = new Calc.OperationModel();
 
-    @Autowired
-    private CalcService calcService;
+    private final CalcService calcService;
 
-    @RequestMapping("/calculator")
+    @GetMapping("/calculator")
     public String getCalculatorPage(Model model){
-        model.addAttribute("operationModel",operationModel);
+        model.addAttribute("operationModel", operationModel);
+        model.addAttribute("user", loggedUser);
         return "calculator";
     }
 
-    @RequestMapping(value="/calculator", params="bmi_divide", method = RequestMethod.POST)
+    @PostMapping(value="/calculator", params="bmiDivide")
     public String divide(@ModelAttribute("operationModel") Calc.OperationModel operationModel, Model model ){
-        model.addAttribute("bmi_result", calcService.bmi_divide(operationModel));
+        model.addAttribute("bmi_result", calcService.bmiDivide(operationModel));
+        model.addAttribute("user", loggedUser);
         return "calculator";
     }
 
-    @RequestMapping(value="/calculator", params="clearSimple", method = RequestMethod.POST)
+    @PostMapping(value="/calculator", params="clearSimple")
     public String clearSimple(@ModelAttribute("operationModel") Calc.OperationModel operationModel, Model model ){
-        model.addAttribute("operationModel",  calcService.clearSimple(operationModel));
+        model.addAttribute("user", loggedUser);
+        model.addAttribute("operationModel", calcService.clearSimple(operationModel));
         model.addAttribute("result", 0);
         return "calculator";
     }

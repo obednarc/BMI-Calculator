@@ -5,22 +5,20 @@
 <body>
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-center">
-        <p class="uk-navbar-item uk-logo">Rejestracja</p>
+        <p class="uk-navbar-item uk-logo">Profil użytkownika</p>
     </div>
 </nav>
 
 <div class="container">
-    <form style="width: 400px; margin: auto" th:object="${user}" th:action="@{/register}" method="post">
+
+    <form style="width: 400px; margin: auto" th:object="${user}" th:action="@{/updateUser}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <input type="hidden" th:field="*{password}"/>
+        <input type="hidden" th:field="*{username}"/>
         <div class="uk-margin">
-            <label>Login</label>
-            <input th:field="*{username}" type="text" class="uk-input">
+            <label>Nazwa użytkownika ( brak możliwości edycji )</label>
+            <input th:field="*{username}" type="text" class="uk-input" disabled>
         </div>
-        <div class="wrong-username" role="alert" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
-        <div class="uk-margin">
-            <label>Hasło</label>
-            <input th:field="*{password}" type="password" class="uk-input">
-        </div>
-        <div class="wrong-password" role="alert" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
         <div class="uk-margin">
             <label>Imię</label>
             <input th:field="*{firstName}" type="text" class="uk-input">
@@ -38,11 +36,10 @@
             <input th:field="*{phone}" type="tel" class="uk-input">
         </div>
         <div class="wrong-phone" role="alert" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
-
-        <a th:href="@{/}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
-        <input type="submit" class="uk-button uk-button-primary" value="Zapisz">
+        <div class="correct-update" role="alert" th:if="${correctUpdate}" th:text="${correctUpdate}"></div>
+        <a th:href="@{/calculator}"><input class="uk-button uk-button-danger" type="button" value="Wróć"></a>
+        <input type="submit" class="uk-button uk-button-primary" value="Zaaktualizuj">
     </form>
 </div>
-
 </body>
 </html>
