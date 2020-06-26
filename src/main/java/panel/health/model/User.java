@@ -26,9 +26,10 @@ public class User {
 
     private String firstName;
     private String lastName;
+
+    @NotBlank(message = "*Adres e-mail nie może być pusty")
     private String email;
 
-    @NotBlank(message = "*Numer telefonu nie może być pusty")
     @Pattern(regexp="(^$|[0-9]{9})", message = "*Numer telefonu musi składać się z 9 cyfr.")
     private String phone;
 }
