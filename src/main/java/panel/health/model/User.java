@@ -32,4 +32,11 @@ public class User {
 
     @Pattern(regexp="(^$|[0-9]{9})", message = "*Numer telefonu musi składać się z 9 cyfr.")
     private String phone;
+
+    @Transient
+    private String newPassword;
+
+    public void updatePassword() {
+        this.password = newPassword;
+    }
 }

@@ -13,10 +13,9 @@
             <input type="hidden" th:field="*{id}"/>
             <input type="submit" class="uk-button uk-button-primary" value="Profil użytkownika">
         </form>
-        <form class="uk-navbar-left" style="margin-left: 20px; margin-right: 50px">
-            <a th:href="@{/login}"><input class="uk-button uk-button-danger" style="background-color: orangered;" type="button" value="Wyloguj"></a>
+        <form class="uk-navbar-left" style="margin-left: 20px; margin-right: 50px" th:action="@{/logout}" method="post">
+            <input type="submit" class="uk-button uk-button-danger" style="background-color: orangered;" value="Wyloguj">
         </form>
-
     </nav>
 
     <h2 class="calc-header">Wprowadź dane</h2>
