@@ -10,10 +10,14 @@
             <p class="uk-navbar-item uk-logo">Kalkulator BMI</p>
         </div>
 
-        <form class="uk-navbar-right" style="margin-right: 50px;" th:action="@{/userProfile}" th:object="${user}" method="post">
+        <form class="uk-navbar-right" style="margin-right: 20px;" th:action="@{/userProfile}" th:object="${user}" method="post">
             <input type="hidden" th:field="*{id}"/>
             <input type="submit" class="uk-button uk-button-primary" value="Profil użytkownika">
         </form>
+        <form class="uk-navbar-left" style="margin-left: 20px; margin-right: 50px">
+            <a th:href="@{/login}"><input class="uk-button uk-button-danger" style="background-color: orangered;" type="button" value="Wyloguj"></a>
+        </form>
+
     </nav>
 
     <h2 class="calc-header">Wprowadź dane</h2>
@@ -30,7 +34,7 @@
         </div>
         <br>
 
-        <input type="submit" class="uk-button uk-button-danger" name="bmiDivide" value="Oblicz"/>
+        <input type="submit" style="margin-right: 20px;" class="uk-button uk-button-danger" name="bmiDivide" value="Oblicz"/>
         <input type="submit" class="uk-button uk-button-primary" name="clearSimple" value="Wyczyść"/>
     </form>
     <br>

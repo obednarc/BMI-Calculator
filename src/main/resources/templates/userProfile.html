@@ -20,6 +20,10 @@
             <input th:field="*{username}" type="text" class="uk-input" disabled>
         </div>
         <div class="uk-margin">
+            <label>Nowe hasło</label>
+            <input th:field="*{password}" type="password" class="uk-input">
+        </div>
+        <div class="uk-margin">
             <label>Imię</label>
             <input th:field="*{firstName}" type="text" class="uk-input">
         </div>
@@ -37,8 +41,8 @@
         </div>
         <div class="wrong-phone" role="alert" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
         <div class="correct-update" role="alert" th:if="${correctUpdate}" th:text="${correctUpdate}"></div>
-        <a th:href="@{/calculator}"><input class="uk-button uk-button-danger" type="button" value="Wróć"></a>
-        <input type="submit" class="uk-button uk-button-primary" value="Zaaktualizuj">
+        <a th:href="@{/calculator}"><input class="uk-button uk-button-danger" style="margin-right: 20px;" type="button" value="Wróć"></a>
+        <input type="submit" class="uk-button uk-button-primary" value="Aktualizuj">
     </form>
 </div>
 </body>

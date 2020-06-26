@@ -40,7 +40,7 @@
         </div>
         <div class="wrong-phone" role="alert" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
 
-        <a th:href="@{/}"><input class="uk-button uk-button-danger" type="button" value="Anuluj"></a>
+        <a th:href="@{/}"><input class="uk-button uk-button-danger" style="margin-right: 20px;" type="button" value="Anuluj"></a>
         <input type="submit" class="uk-button uk-button-primary" value="Zapisz">
     </form>
 </div>
