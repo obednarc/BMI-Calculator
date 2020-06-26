@@ -33,6 +33,7 @@
             <label>Email</label>
             <input th:field="*{email}" type="text" class="uk-input">
         </div>
+        <div class="wrong-email" role="alert" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
         <div class="uk-margin">
             <label>Telefon</label>
             <input th:field="*{phone}" type="tel" class="uk-input">
