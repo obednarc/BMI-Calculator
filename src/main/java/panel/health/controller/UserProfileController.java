@@ -11,6 +11,8 @@ import panel.health.service.UserService;
 
 import javax.validation.Valid;
 
+import static panel.health.controller.LoginController.loggedUser;
+
 @Controller
 @RequiredArgsConstructor
 public class UserProfileController {
@@ -32,9 +34,19 @@ public class UserProfileController {
         if (bindingResult.hasErrors()) {
             return modelAndView;
         }
-        modelAndView.addObject("correctUpdate", "*Pomyślnie zaaktualizowano dane.");
+        if(user.getNewPassword() != null && !user.getNewPassword().isEmpty()){
+            user.updatePassword();
+        }
         userService.saveUser(user);
+        modelAndView.addObject("correctUpdate", "*Pomyślnie zaaktualizowano dane.");
         return modelAndView;
     }
 
+    @PostMapping("/logout")
+    public ModelAndView logoutUser(){
+        loggedUser = null;
+        ModelAndView modelAndView = new ModelAndView("welcome");
+        modelAndView.addObject("logout", "*Użytkownik został pomyślnie wylogowany.");
+        return modelAndView;
+    }
 }
