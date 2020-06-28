@@ -23,14 +23,13 @@
 
         <div class="uk-margin" style="margin-top: 60px";>
             <label>Wprowadź swoją wagę w [kg]:</label>
-            <input type="text" th:field="*{weight}"/>
+            <input class="uk-input-inline uk-input" type="text" th:field="*{weight}"/>
         </div>
 
-        <div class="uk-margin" style="margin-top: 40px !important;">
+        <div class="uk-margin" style="margin-top: 20px !important;">
             <label>Wprowadź swój wzrost w [m]:</label>
-            <input type="text" th:field="*{height}"/>
+            <input class="uk-input-inline uk-input" type="text" th:field="*{height}"/>
         </div>
-        <br>
 
         <input type="submit" style="margin-right: 20px;" class="uk-button uk-button-secondary" name="bmiDivide" value="Oblicz"/>
         <input type="submit" class="uk-button uk-button-danger" name="clearSimple" value="Wyczyść"/>
@@ -48,6 +47,59 @@
                 </div>
             </div>
         </form>
+
+        <div class="container">
+        <table class="uk-table uk-table-striped uk-table-responsive">
+            <thead>
+            <tr>
+                <th>WYNIK</th>
+                <th>ZNACZENIE</th>
+                <th>WSKAZANIA</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="uk-table-expand">mniej niż 16</td>
+                <td class="uk-table-expand-max">wygłodzenie</td>
+                <td>Pilna konsultacja ze specjalistą. Stan zagrażający życiu!</td>
+            </tr>
+            <tr>
+                <td class="uk-table-expand">16 - 16.99</td>
+                <td class="uk-table-expand-max">wychudzenie</td>
+                <td>Pilna konsultacja ze specjalistą</td>
+            </tr>
+            <tr>
+                <td class="uk-table-expand">17 - 18.49</td>
+                <td class="uk-table-expand-max">niedowaga</td>
+                <td>Zalecana konsultacja ze specjalistą</td>
+            </tr>
+            <tr>
+                <td class="uk-table-expand">18.5 - 24.99</td>
+                <td class="uk-table-expand-max">waga prawidłowa</td>
+            </tr>
+            <tr>
+                <td class="uk-table-expand">25 - 29.99</td>
+                <td class="uk-table-expand-max">nadwaga</td>
+                <td>Zalecana konsultacja ze specjalistą</td>
+            </tr>
+            <tr>
+                <td>30 - 34.99</td>
+                <td class="uk-table-expand-max">Otyłość I stopnia</td>
+                <td>Zalecana konsultacja ze specjalistą</td>
+            </tr>
+            <tr>
+                <td class="uk-table-expand">35 - 39.99</td>
+                <td class="uk-table-expand-max">Otyłość II stopnia</td>
+                <td>Pilna konsultacja ze specjalistą</td>
+            </tr>
+            <tr>
+                <td class="uk-table-expand">powyżej 40</td>
+                <td class="uk-table-expand-max">otyłość skrajna</td>
+                <td>Pilna konsultacja ze specjalistą. Stan zagrażający życiu!</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
     </div>
 </div>
 </body>

@@ -8,15 +8,10 @@ public class Calc {
         private String operation;
         private double weight;
         private double height;
-        /*private int age;*/
 
         public OperationModel() {
         }
 
-        /*public OperationModel(int age) {
-            this.age = age;
-        }
-*/
         public OperationModel(String operation) {
             this.operation = operation;
         }
@@ -50,14 +45,6 @@ public class Calc {
         public void setOperation(String operation) {
             this.operation = operation;
         }
-
-       /* public int getAge() {
-            return age;
-        }
-
-        public void setAge(int age) {
-            this.age = age;
-        }*/
     }
 
 }

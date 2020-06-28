@@ -921,12 +921,11 @@ a.uk-link-reset,
  */
 .uk-table th {
   padding: 16px 12px;
-  text-align: right;
+  /*text-align: left;
   vertical-align: bottom;
-  /* 1 */
-  font-size: 0.875rem;
-  font-weight: normal;
-  color: #999;
+  font-size: .875rem;
+  font-weight: 400;*/
+  color: rgb(83, 182, 0);
   text-transform: uppercase;
 }
 /* Cell
@@ -1017,6 +1016,10 @@ a.uk-link-reset,
   width: 1px;
 }
 .uk-table-expand {
+  min-width: 150px;
+}
+
+.uk-table-expand-max {
   min-width: 150px;
 }
 /* Cell link modifier

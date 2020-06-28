@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>asystent</groupId>
-    <artifactId>Panel_Zdrowie</artifactId>
+    <artifactId>BMI_Calculator</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Panel_Zdrowie</name>
+    <name>BMI Calculator</name>
     <description>Projekt końcowy studiów Java Web Developer</description>
 
     <properties>

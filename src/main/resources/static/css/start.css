@@ -69,7 +69,7 @@ html{
     margin-left:2%;
 }
 
-.uk-input-password{
+.input-password{
     height: 40px;
     max-width: 85%;
     width: 85%;
@@ -81,4 +81,30 @@ html{
     transition: .2s ease-in-out;
     transition-property: all;
     transition-property: color,background-color,border;
+}
+
+.uk-input-inline{
+    width: 15%;
+}
+
+.uk-table{
+    margin-top: 2%;
+    margin-left: 25%;
+    width: 50%;
+    text-align: center;
+}
+
+.uk-table th {
+    padding: 16px 12px;
+    color: rgb(83, 182, 0);
+    font-size: .900rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.uk-table-expand-max{
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 250px;
 }

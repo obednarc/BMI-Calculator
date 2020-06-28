@@ -18,8 +18,8 @@
         <div class="wrong-username" role="alert" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
         <div class="uk-margin">
             <div><label>Hasło *</label></div>
-            <div><input th:field="*{password}" type="password" class="uk-input-password input-password">
-            <span class="btn-show" uk-icon="search"></span></div>
+            <div><input th:field="*{password}" type="password" class="input-password">
+                <button class="btn-show" uk-icon="search"></button></div>
         </div>
         <div class="wrong-password" role="alert" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
         <div class="uk-margin">
