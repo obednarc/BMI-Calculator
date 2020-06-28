@@ -2,6 +2,18 @@ html{
     background-color: #f8f8f8;
 }
 
+.bg-image{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://s6.ifotos.pl/img/leavesjpg_qqhwxrs.jpg");
+    background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    z-index: -1;
+}
+
 .uk-card-default{
     width: 400px;
     margin: 200px auto
@@ -10,13 +22,17 @@ html{
 .uk-button{
     margin-top: 20px;
     color: white;
-    background-color: #ffbf00;
+    background-color: #BCF26A;
     border-radius: 4px;
     font-size: 16px;
 }
 
+.uk-card-default{
+    border-radius: 6px;
+}
+
 .uk-button-secondary{
-    background-color: dodgerblue;
+    background-color: rgb(83, 182, 0);
 }
 
 .calc-header{
@@ -33,4 +49,36 @@ html{
     text-align:center;
     font-size: 60px;
     font-weight: bold;
+}
+
+.uk-navbar-left{
+    margin-left: 30px;
+}
+
+.uk-navbar-right{
+    margin-right: 30px
+}
+
+.uk-button-logout{
+    background-color: #ff9933;
+}
+
+.btn-show{
+    width: auto;
+    height: 20%;
+    margin-left:2%;
+}
+
+.uk-input-password{
+    height: 40px;
+    max-width: 85%;
+    width: 85%;
+    border: 0 none;
+    padding: 0 10px;
+    background: #fff;
+    color: #666;
+    border: 1px solid #e5e5e5;
+    transition: .2s ease-in-out;
+    transition-property: all;
+    transition-property: color,background-color,border;
 }

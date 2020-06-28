@@ -12,13 +12,14 @@
 <div class="container">
     <form style="width: 400px; margin: auto" th:object="${user}" th:action="@{/register}" method="post">
         <div class="uk-margin">
-            <label>Login</label>
+            <label>Login *</label>
             <input th:field="*{username}" type="text" class="uk-input">
         </div>
         <div class="wrong-username" role="alert" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
         <div class="uk-margin">
-            <label>Hasło</label>
-            <input th:field="*{password}" type="password" class="uk-input">
+            <div><label>Hasło *</label></div>
+            <div><input th:field="*{password}" type="password" class="uk-input-password input-password">
+            <span class="btn-show" uk-icon="search"></span></div>
         </div>
         <div class="wrong-password" role="alert" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
         <div class="uk-margin">
@@ -30,7 +31,7 @@
             <input th:field="*{lastName}" type="text" class="uk-input">
         </div>
         <div class="uk-margin">
-            <label>Email</label>
+            <label>Email *</label>
             <input th:field="*{email}" type="text" class="uk-input">
         </div>
         <div class="wrong-email" role="alert" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
@@ -41,9 +42,9 @@
         <div class="wrong-phone" role="alert" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
 
         <a th:href="@{/}"><input class="uk-button uk-button-danger" style="margin-right: 20px;" type="button" value="Anuluj"></a>
-        <input type="submit" class="uk-button uk-button-primary" value="Zapisz">
+        <input type="submit" class="uk-button uk-button-secondary" value="Zapisz">
     </form>
 </div>
-
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>

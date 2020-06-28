@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
@@ -27,6 +28,7 @@ public class User {
     private String firstName;
     private String lastName;
 
+    @Email
     @NotBlank(message = "*Adres e-mail nie może być pusty")
     private String email;
 
