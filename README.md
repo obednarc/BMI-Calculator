@@ -1,7 +1,7 @@
 Projekt będzie wyliczał wskaźnik BMI, przy czym skupia się głównie nad administracją danymi użytkownika.
 Do skorzystania z niego będzie wymagana rejestracja/zalogowanie z zapisem i odczytem z bazy.
 Użytkownik ma możliwość wyświetlenia i zmiany swoich danych wprowadzonych przy rejestracji w Panelu Użytkownika.
-Projekt można rozwijać w dowolny sposób.
+Projekt można rozwijać w dowolny sposób, szczególnie uwzględniając Spring Security.
 
 
 Do uruchomienia projektu:
