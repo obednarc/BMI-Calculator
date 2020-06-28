@@ -108,3 +108,8 @@ html{
     font-weight: bold;
     width: 250px;
 }
+
+.uk-card-footer{
+    text-align: right;
+    margin-bottom: auto;
+}
