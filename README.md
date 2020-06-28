@@ -9,6 +9,7 @@ Do uruchomienia projektu:
 2) Włączenie Annotation Processing
 3) użytkownik bazy MS SQL Morfeusz - ustanowić połączenie VPN z bazą i edytować plik db-template.properties według info w pliku 
 4) użytkownik serwera lokalnego/innej bazy - w application.properties, db-template.properties oraz pom.xml zmodyfikować ustawienia bazy danych.
+5) localhost:8071
 
 
 
