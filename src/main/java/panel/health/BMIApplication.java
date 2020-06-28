@@ -6,10 +6,10 @@ import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
 @PropertySource("classpath:db.properties")
-public class HealthApplication {
+public class BMIApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HealthApplication.class, args);
+        SpringApplication.run(BMIApplication.class, args);
     }
 
 }
