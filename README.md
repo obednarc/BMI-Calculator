@@ -24,7 +24,7 @@ Przy procesie rejestracji następują ograniczenia:
 
 ------------------------------------------------
 
-Dane testowe do projektu:
+Przykładowe dane do projektu:
 
 LOGIN: anna12
 HASŁO: anna123
